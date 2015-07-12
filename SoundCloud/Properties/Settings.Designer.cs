@@ -34,5 +34,41 @@ namespace SoundCloud.Properties {
                 this["APIUrl"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4318e7c4794af066b28e4773247b8188")]
+        public string ClientID {
+            get {
+                return ((string)(this["ClientID"]));
+            }
+            set {
+                this["ClientID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("67a4ac213b392dfa74e301badf6739fe")]
+        public string Secret {
+            get {
+                return ((string)(this["Secret"]));
+            }
+            set {
+                this["Secret"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserId {
+            get {
+                return ((string)(this["UserId"]));
+            }
+            set {
+                this["UserId"] = value;
+            }
+        }
     }
 }

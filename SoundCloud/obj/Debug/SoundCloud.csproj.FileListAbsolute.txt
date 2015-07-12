@@ -1,1 +1,15 @@
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\SoundCloud.exe.config
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\SoundCloud.exe
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\SoundCloud.pdb
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\RestSharp.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\RestSharp.xml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csprojResolveAssemblyReference.cache
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\MainWindow.baml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\MainWindow.g.cs
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\App.g.cs
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud_MarkupCompile.cache
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.g.resources
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.Properties.Resources.resources
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csproj.GenerateResource.Cache
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.exe
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.pdb

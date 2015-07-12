@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using SoundCloud.Client;
+
 namespace SoundCloud
 {
     /// <summary>
@@ -23,6 +25,16 @@ namespace SoundCloud
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MainWindowInit(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Properties.Settings.Default.UserId))
+            {
+                var client = new SoundCloudClient();
+
+                client.GetTracks();
+            }
         }
     }
 }

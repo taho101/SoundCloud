@@ -5,5 +5,14 @@
     <Setting Name="APIUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://api.soundcloud.com</Value>
     </Setting>
+    <Setting Name="ClientID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4318e7c4794af066b28e4773247b8188</Value>
+    </Setting>
+    <Setting Name="Secret" Type="System.String" Scope="User">
+      <Value Profile="(Default)">67a4ac213b392dfa74e301badf6739fe</Value>
+    </Setting>
+    <Setting Name="UserId" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
