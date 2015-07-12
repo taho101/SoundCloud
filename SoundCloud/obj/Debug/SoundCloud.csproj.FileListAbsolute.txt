@@ -1,0 +1,1 @@
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\SoundCloud.exe.config
