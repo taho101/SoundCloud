@@ -13,3 +13,38 @@ C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.Properti
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csproj.GenerateResource.Cache
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.exe
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud.pdb
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\Elements\loading_indicator.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\MainWindow.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\Elements\loading_indicator.g.cs
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\MainWindow.g.cs
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\App.g.cs
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud_MarkupCompile.cache
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.g.resources
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.Properties.Resources.resources
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\SoundCloud.exe.config
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\SoundCloud.exe
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\SoundCloud.pdb
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\NAudio.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\RestSharp.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\NAudio.xml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\RestSharp.xml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\de\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\es\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\fr\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\it\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\ja\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\ko\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.exe
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.pdb
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud_MarkupCompile.lref
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\App.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\Partials\discover.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\Style\Global.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\Style\TrackSlider.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\Partials\discover.g.cs

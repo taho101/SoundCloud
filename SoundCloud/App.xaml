@@ -4,5 +4,12 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/Global.xaml"/>
+                <ResourceDictionary Source="Style/TrackSlider.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+    	</ResourceDictionary>
+         
     </Application.Resources>
 </Application>
