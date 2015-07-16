@@ -1,52 +1,57 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Elements="clr-namespace:SoundCloud.Elements" x:Class="SoundCloud.MainWindow"
+        xmlns:Elements="clr-namespace:SoundCloud.Elements" x:Name="MainPlayer" x:Class="SoundCloud.MainWindow"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="MainWindow" Height="720" Width="1280" Initialized="MainWindowInit">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <!--Frame view-->
-        <Grid Margin="0">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7600">
+        <Grid>
+            <Frame x:Name="FrameSide" NavigationUIVisibility="Hidden" Source="/SoundCloud;component/Partials/sidebar.xaml" />
+        </Grid>
+        <Grid Margin="0" Grid.Column="1">
+            <Frame x:Name="FrameContent" NavigationUIVisibility="Hidden" />
+            <!--<Grid HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7600">
                 <Image Source="https://a-v2.sndcdn.com/assets/images/header/wordmark-d95b0a.png" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None" />
-            </Grid>
-            <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0"/>
+            </Grid>-->
         </Grid>
         <!--Bottom Player-->
-        <Grid Grid.Row="1" Height="50" Background="#FF232220">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Height="50" Background="#FF232220">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10" />
                 <ColumnDefinition Width="50" />
-                <ColumnDefinition Width="150" />
-				<ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="*" />
-				<ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="150" />
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
             </Grid.ColumnDefinitions>
-            <Image Source="https://i1.sndcdn.com/artworks-000119660837-xwtctr-t120x120.jpg" HorizontalAlignment="Left" Grid.Column="1" />
-            <StackPanel Grid.Column="2">
-                <TextBlock Margin="5,8,0,0" Foreground="White">Droplex</TextBlock>
-                <TextBlock Margin="5,0,0,0" Foreground="#99FFFFFF">Shine</TextBlock>
-            </StackPanel>
-            <Button Grid.Column="3">Prev</Button>
-            <Button Grid.Column="4">Play</Button>
-            <Button Grid.Column="5">Next</Button>
-            <Label Content="1:20" Grid.Column="6" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Slider Margin="10,0" Style="{DynamicResource SliderStyle1}" Grid.Column="7" Value="5" Maximum="100" />
-			<Label Content="4:26" Grid.Column="8" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Button Grid.Column="9" Style="{DynamicResource ControlBtns}">
+            <Grid Grid.Column="2" HorizontalAlignment="Right" Width="29" Margin="0">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="0.5,0">
+                        <GradientStop Color="#FF232220" Offset="0"/>
+                        <GradientStop Offset="1" Color="#00232220"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+            </Grid>
+            <Button Grid.Column="1" Style="{DynamicResource ControlBtns}">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>
-                        <Path Data="M17.071346,6.6599999C17.78875,8.1508932 18.122005,9.9854851 17.917633,11.917816 17.780151,13.210711 17.415701,14.404805 16.885771,15.449L15.177,14.644304C15.617841,13.787608 15.9243,12.790113 16.036884,11.719817 16.208162,10.105325 15.913901,8.568861 15.306683,7.365747z M20.566984,5.2669997C21.512329,7.3320866 21.947803,9.7617378 21.678318,12.318976 21.49543,14.033849 21.006458,15.634024 20.297501,17.052L18.59,16.251213C19.210964,15.018133 19.637339,13.622355 19.796829,12.11588 20.034515,9.8762961 19.647739,7.7448602 18.813787,5.9662089z M13.335,0L13.335,21.334999 5.6516771,14.88951 0,14.88951 0,6.4454007 5.6543674,6.4454007z" Stretch="Uniform" Style="{DynamicResource ControlBtnsPath}" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                        <Path Data="M0,0L4.5479997,0 4.5479997,10.66655 16.912999,0.49600017 16.912999,10.666854 16.912999,20.839 4.5479997,10.666854 4.5479997,21.333 0,21.333z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ControlMediaBtnsPath}">
                             <Path.RenderTransform>
                                 <TransformGroup>
                                     <TransformGroup.Children>
@@ -59,10 +64,112 @@
                     </Grid>
                 </Viewbox>
             </Button>
+            <Button Grid.Column="2" Style="{DynamicResource ControlBtns}">
+                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                    <Grid>
+                        <Path Visibility="Collapsed" Data="M27.270001,0L44.310001,0 44.310001,48.643002 27.270001,48.643002z M0,0L17.040001,0 17.040001,48.643002 0,48.643002z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path Data="M0,0L384.885,191.965 769.768,383.928 384.885,576.035 0,768 0,383.928z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ControlMediaBtnsPath}">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="3" Style="{DynamicResource ControlBtns}">
+                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                    <Grid>
+                        <Grid Name="backgroundGrid" Width="48" Height="48" Visibility="Collapsed" />
+                        <Path Data="M0,0.49600017L12.364999,10.668153 0,20.839001 0,10.668153z M12.365,0L16.913,0 16.913,21.333 12.365,21.333 12.365,10.66785z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ControlMediaBtnsPath}">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+            </Button>
+            <Label Content="1:20" Grid.Column="4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Slider Margin="10,0" Style="{DynamicResource SliderStyle1}" Grid.Column="5" Value="5" Maximum="100" />
+            <Label Content="4:26" Grid.Column="6" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Grid.Column="7" Style="{DynamicResource ControlBtns}">
+                <Grid>
+                    <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                        <Grid>
+                            <Path Data="M17.071346,6.6599999C17.78875,8.1508932 18.122005,9.9854851 17.917633,11.917816 17.780151,13.210711 17.415701,14.404805 16.885771,15.449L15.177,14.644304C15.617841,13.787608 15.9243,12.790113 16.036884,11.719817 16.208162,10.105325 15.913901,8.568861 15.306683,7.365747z M20.566984,5.2669997C21.512329,7.3320866 21.947803,9.7617378 21.678318,12.318976 21.49543,14.033849 21.006458,15.634024 20.297501,17.052L18.59,16.251213C19.210964,15.018133 19.637339,13.622355 19.796829,12.11588 20.034515,9.8762961 19.647739,7.7448602 18.813787,5.9662089z M13.335,0L13.335,21.334999 5.6516771,14.88951 0,14.88951 0,6.4454007 5.6543674,6.4454007z" Stretch="Uniform" Style="{DynamicResource ControlBtnsPath}" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                    <Grid Margin="-17,-181,-17,34" Height="164" Background="#FF2D2C2A" Style="{DynamicResource ControlBtnsVolume}">
+                        <Slider Orientation="Vertical" Height="150" VerticalAlignment="Center"  Style="{DynamicResource SliderStyle1}" />
+                    </Grid>
+                </Grid>
+            </Button>
+            <Image Source="https://i1.sndcdn.com/artworks-000004440475-limwcd-t500x500.jpg" HorizontalAlignment="Left" Grid.Column="8" />
+            <StackPanel Grid.Column="9">
+                <TextBlock Margin="5,8,1,0" Foreground="White"><Run Text="Blackmill"/></TextBlock>
+                <TextBlock Margin="5,0,1,0" Foreground="#99FFFFFF"><Run Text="Robert Miles - Children (Blackmill Dubstep Remix)"/></TextBlock>
+            </StackPanel>
             <Button Grid.Column="10" Style="{DynamicResource ControlBtns}">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>
                         <Path Data="M215.68,0C292.242,0.004216 365.634,42.1602 404.47,114.292 458.543,13.9345 579.463,-28.3974 682.751,20.0872 791.16,70.9477 838.901,202.422 789.378,313.761 740.008,424.79 404.432,768 404.432,768 402.348,766.637 68.9311,424.79 19.5614,313.761 -29.9588,202.422 17.7792,70.9477 126.225,20.0872 155.275,6.45091 185.72,-0.001663 215.68,0z" Stretch="Uniform" Style="{DynamicResource ControlBtnsPath}" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="11" Style="{DynamicResource ControlBtns}">
+                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                    <Grid>
+                        <Path Data="M111.268192992196,0L222.536396727548,0C238.29710839747,-1.21226185001433E-06,251.068684325204,14.294688790178,251.068684325204,31.9254146507737L251.068684325204,127.671537011003 285.304981932626,127.671537011003 231.102207884775,191.499997704363 176.885533080087,127.671537011003 211.121845946298,127.671537011003 211.121845946298,44.6865440300462 147.804722533212,44.6865440300462z M54.2166678762296,0L108.412922606454,63.8357673576829 74.1831481313566,63.8357673576829 74.1831481313566,146.813459008074 137.50722192286,146.813459008074 174.037205443368,191.499997704363 62.7690093374113,191.499997704363C47.0082938527921,191.499997704363,34.2363059377531,177.205304711199,34.2363059377531,159.5745826653L34.2363059377531,63.8357673576829 0,63.8357673576829z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ControlBtnsPath}">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="12" Style="{DynamicResource ResourceKey=ControlBtns}">
+                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                    <Grid>
+                        <Path Data="M8.6276054,20.288C13.393148,20.288 17.255001,24.151413 17.255001,28.91715 17.255001,31.300018 16.289537,33.456982 14.728382,35.018227L14.539989,35.197853 14.618679,35.41201C17.135284,42.031853,23.067958,46.967979,30.263642,48.067356L30.494701,48.099686 30.490417,48.136543C30.450464,48.53767 30.430002,48.944519 30.430002,49.356152 30.430002,51.469261 30.9671,53.459148 31.911995,55.196476L32.018209,55.381001 31.912869,55.376995C20.948722,54.821301,11.704531,47.750938,7.9735947,37.959263L7.8067379,37.505131 7.7453671,37.500465C3.3943481,37.058708 0,33.385029 0,28.91715 0,24.151413 3.8620129,20.288 8.6276054,20.288z M54.368111,11.253589L54.62896,11.577476C58.249641,16.184826 60.409,21.995144 60.409,28.310675 60.409,36.350529 56.90888,43.572262 51.349154,48.535328L51.284399,48.591248 51.308777,48.911942C51.316231,49.059017 51.320002,49.207066 51.320002,49.355999 51.320002,54.121822 47.457924,57.984001 42.692451,57.984001 37.926879,57.984001 34.065002,54.121822 34.065002,49.355999 34.065002,44.590179 37.926879,40.728001 42.692451,40.728001 44.479504,40.728001 46.139516,41.271118 47.516464,42.20134L47.611805,42.269138 48.041821,41.816082C51.303757,38.259216 53.294502,33.517559 53.294502,28.310675 53.294502,24.515972 52.237183,20.968374 50.401058,17.946394L50.382874,17.917267 50.632385,17.701092C52.375431,16.116703,53.661556,14.03825,54.267319,11.689239z M42.39045,3.3306691E-15C47.155922,-4.8393041E-08 51.018002,3.862098 51.018002,8.6278791 51.018002,13.3936 47.155922,17.256998 42.39045,17.256998 37.624781,17.256998 33.763002,13.3936 33.763003,8.6278791L33.770525,8.3302011 33.307602,8.3236122C25.71822,8.3236122,19.117211,12.552906,15.732731,18.783394L15.674902,18.893002 15.227575,18.59062C13.481487,17.468006,11.432825,16.777121,9.2319889,16.669769L8.8316307,16.660027 8.8783436,16.559973C13.255033,7.4761658 22.548777,1.2089999 33.307602,1.2089998 34.62321,1.209 35.916911,1.3027132 37.182393,1.4838299L37.484619,1.5314548 37.566384,1.4733124C38.943308,0.54310751,40.603324,-4.8393041E-08,42.39045,3.3306691E-15z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ControlBtnsPath}">
                             <Path.RenderTransform>
                                 <TransformGroup>
                                     <TransformGroup.Children>

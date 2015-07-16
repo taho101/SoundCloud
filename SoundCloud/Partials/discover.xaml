@@ -3,14 +3,17 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="670" d:DesignWidth="1280"
-	Title="discover">
+      xmlns:Elements="clr-namespace:SoundCloud.Elements" x:Name="MainPlayer"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" d:DesignHeight="670" d:DesignWidth="1280" Title="discover">
 
     <Border Padding="10" Background="#FFF4FAFA">
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-            <TextBlock Text="Discover" Style="{DynamicResource HeaderText}" />
-            <TextBlock Text="/ new music you should try" Style="{DynamicResource SubHeaderText}" />
-        </StackPanel>
+        <Grid>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <TextBlock Text="Discover" Style="{DynamicResource HeaderText}" />
+                <TextBlock Text="/ new music you should try" Style="{DynamicResource SubHeaderText}" />
+            </StackPanel>
+            <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0"/>
+        </Grid>
     </Border>
 </Page>

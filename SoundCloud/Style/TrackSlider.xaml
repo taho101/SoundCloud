@@ -65,6 +65,21 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
+	<Style x:Key="RepeatButtonTransparentH" TargetType="{x:Type RepeatButton}">
+		<Setter Property="OverridesDefaultStyle" Value="true"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Focusable" Value="false"/>
+		<Setter Property="IsTabStop" Value="false"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type RepeatButton}">
+					<Border Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+						<Rectangle Width="4" Fill="{TemplateBinding Background}"/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 	<ControlTemplate x:Key="SliderThumbHorizontalDefault" TargetType="{x:Type Thumb}">
 		<Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
 			<Ellipse x:Name="grip" Fill="#FFFF5500" Stretch="Fill" SnapsToDevicePixels="True" Stroke="{StaticResource SliderThumb.Static.Border}" StrokeThickness="0" UseLayoutRounding="True" VerticalAlignment="Stretch" Width="18" Height="18"/>
@@ -175,7 +190,7 @@
 	</ControlTemplate>
 	<ControlTemplate x:Key="SliderThumbVerticalDefault" TargetType="{x:Type Thumb}">
 		<Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
-			<Path x:Name="grip" Data="M0.5,0.5 L18.5,0.5 18.5,11.5 0.5,11.5z" Fill="{StaticResource SliderThumb.Static.Background}" Stretch="Fill" Stroke="{StaticResource SliderThumb.Static.Border}"/>
+			<Ellipse x:Name="grip" Fill="#FFFF5500" Stretch="Fill" Stroke="{StaticResource SliderThumb.Static.Border}" StrokeThickness="0" UseLayoutRounding="True" VerticalAlignment="Stretch" Width="18" Height="18"/>
 		</Grid>
 		<ControlTemplate.Triggers>
 			<Trigger Property="IsMouseOver" Value="true">
@@ -194,7 +209,7 @@
 	</ControlTemplate>
 	<ControlTemplate x:Key="SliderVertical" TargetType="{x:Type Slider}">
 		<Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
-			<Grid>
+			<Grid HorizontalAlignment="Center">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition MinWidth="{TemplateBinding MinWidth}" Width="Auto"/>
@@ -209,13 +224,13 @@
 				</Border>
 				<Track x:Name="PART_Track" Grid.Column="1">
 					<Track.DecreaseRepeatButton>
-						<RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}"/>
+						<RepeatButton Command="{x:Static Slider.DecreaseLarge}" Style="{StaticResource RepeatButtonTransparent}" />
 					</Track.DecreaseRepeatButton>
 					<Track.IncreaseRepeatButton>
-						<RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{StaticResource RepeatButtonTransparent}"/>
+						<RepeatButton Command="{x:Static Slider.IncreaseLarge}" Style="{DynamicResource RepeatButtonTransparentH}" Background="#FFC8C8C8" />
 					</Track.IncreaseRepeatButton>
 					<Track.Thumb>
-						<Thumb x:Name="Thumb" Focusable="False" Height="11" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbVerticalDefault}" VerticalAlignment="Top" Width="18"/>
+						<Thumb x:Name="Thumb" Focusable="False" Height="18" OverridesDefaultStyle="True" Template="{StaticResource SliderThumbVerticalDefault}" VerticalAlignment="Top" Width="18"/>
 					</Track.Thumb>
 				</Track>
 			</Grid>
