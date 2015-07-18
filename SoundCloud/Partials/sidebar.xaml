@@ -7,7 +7,7 @@
 
     <StackPanel Background="#FFE9EDFF">
         <Label>Menu</Label>
-        <ListBox>
+        <ListBox x:Name="menulist" SelectionChanged="Menu_SelectionChanged" >
             <ListBoxItem>
                 <Label>Stream</Label>
             </ListBoxItem>
@@ -25,7 +25,7 @@
             </ListBoxItem>
         </ListBox>
         <Label>Your profile</Label>
-        <ListBox>
+        <ListBox x:Name="profilelist" SelectionChanged="profile_SelectionChanged">
             <ListBoxItem>
                 <Label>Likes</Label>
             </ListBoxItem>

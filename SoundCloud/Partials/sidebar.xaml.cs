@@ -24,5 +24,34 @@ namespace SoundCloud.Partials
         {
             InitializeComponent();
         }
+
+        private void profile_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow getMainWindow = new MainWindow();
+            switch (profilelist.SelectedIndex)
+            {
+                case 1:
+                    getMainWindow.ContentFrame.Navigate(new Partials.discover());
+                    break;
+                case 2:
+                    getMainWindow.ContentFrame.Navigate(new Partials.sidebar());
+                    break;
+            }
+        }
+
+        private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow getMainWindow = new MainWindow();
+            switch (menulist.SelectedIndex)
+            {
+                case 1:
+                    getMainWindow.ContentFrame.Navigate(new Partials.discover());
+                    break;
+                case 2:
+                    getMainWindow.ContentFrame.Navigate(new Partials.discover());
+                    break;
+            }
+        }
+        //object NavigationSystem = getMainWindow.FrameContent.ActualHeight;
     }
 }
