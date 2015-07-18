@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SoundCloud.Client;
+using SoundCloud.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,16 @@ namespace SoundCloud.Partials
         public discover()
         {
             InitializeComponent();
+        }
+
+        public void setTracks()
+        {
+            if (string.IsNullOrWhiteSpace(Properties.Settings.Default.UserId))
+            {
+                var client = new SoundCloudClient();
+
+                List<Track> tracks = client.GetTracks();
+            }
         }
     }
 }

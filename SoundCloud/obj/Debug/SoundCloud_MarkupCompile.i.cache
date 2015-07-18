@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\
 SoundCloud
 none
 false
 DEBUG;TRACE
-C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\App.xaml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\App.xaml
 6-145418062
 
-141190928330
-17-1001198446
+151903960107
+1832212742
 Elements\loading_indicator.xaml;MainWindow.xaml;Partials\discover.xaml;Partials\sidebar.xaml;Style\Global.xaml;Style\TrackSlider.xaml;
 
-True
+False
 
