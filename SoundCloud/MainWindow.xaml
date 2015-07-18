@@ -10,21 +10,62 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <!--Frame view-->
-        <Grid>
+        <Grid Grid.Row="1">
             <Frame x:Name="FrameSide" NavigationUIVisibility="Hidden" Source="/SoundCloud;component/Partials/sidebar.xaml" />
         </Grid>
-        <Grid Margin="0" Grid.Column="1">
+        <Grid Margin="0" Grid.Column="1" Grid.Row="1">
             <Frame x:Name="FrameContent" NavigationUIVisibility="Hidden" />
             <!--<Grid HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7600">
                 <Image Source="https://a-v2.sndcdn.com/assets/images/header/wordmark-d95b0a.png" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None" />
             </Grid>-->
         </Grid>
+        <Grid x:Name="notifier" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="25" Background="#FFE41717" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Grid.Column="1" Margin="0,3">
+                <Grid>
+                    <Path Data="M33.245033,38.267002C33.745007,38.266979,34.24287,38.330002,34.725391,38.455589L34.753094,38.46357 34.607914,38.83115C34.073689,40.287548 33.782001,41.859955 33.782001,43.499149 33.782001,45.606899 34.264179,47.604179 35.124073,49.386398L35.20993,49.553829 35.175865,49.568485C32.935261,50.4687 30.307802,49.948276 28.645309,48.059708 26.527325,45.659943 26.810284,41.97295 29.257309,39.785988 30.404808,38.76976 31.833338,38.267067 33.245033,38.267002z M43.078392,36.394001L40.268002,39.204571 44.563007,43.499515 40.268002,47.794479 43.078392,50.604999 47.373497,46.309959 51.668598,50.604999 54.479,47.794479 50.183987,43.499515 54.479,39.204571 51.668598,36.394001 47.373497,40.689056z M47.373165,32.907001C53.222565,32.907001 57.964001,37.648517 57.964001,43.497421 57.964001,49.348255 53.222565,54.090999 47.373165,54.090999 41.524418,54.090999 36.783001,49.348255 36.783001,43.497421 36.783001,37.648517 41.524418,32.907001 47.373165,32.907001z M33.013165,20.498834C36.110596,20.472483 39.214424,21.068373 42.195992,22.326485 45.938488,24.023807 49.317997,27.106447 52.60561,30.667299L53.052052,31.155847 52.659004,30.97785C51.0336,30.289106 49.247372,29.908001 47.373699,29.908001 44.328438,29.908001 41.51429,30.914356 39.246063,32.61182L39.027828,32.78342 38.805565,32.643951C33.063362,29.130442,28.077692,30.322496,20.81399,36.946113L20.40099,37.313309 13.626988,29.658399 14.032989,29.282102C19.415426,23.626449,26.198816,20.556812,33.013165,20.498834z M34.073677,0.0013265521C39.264679,0.04313548 44.36026,1.0753696 48.87973,3.4114593 57.486866,8.1243018 62.65794,12.759045 66.667,17.20429L58.51088,24.436001C54.721821,20.260252 50.414753,16.300001 44.458668,13.26944 32.062481,7.4095119 15.911238,12.43095 7.4391122,21.796034L7.0151043,22.181429 0,14.241426 0.42900658,13.854732C6.9186969,6.2559875,20.807785,-0.10551564,34.073677,0.0013265521z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <TransformGroup.Children>
+                                    <RotateTransform Angle="0" />
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup.Children>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+            </Viewbox>
+            <Label Grid.Column="2" Foreground="White" VerticalAlignment="Center" Padding="5,0">You seems to be offline, please a network to connect to</Label>
+            <Button Grid.Column="3" Padding="6">
+                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                    <Grid>
+                        <Path Data="M72.0101,0C90.4433,2E-06,108.882,7.01784,122.949,21.0535L384.892,282.359 646.792,21.0535C674.927,-7.01784 720.547,-7.01784 748.683,21.0535 776.775,49.1265 776.775,94.5986 748.64,122.67L486.74,383.975 748.683,645.324C776.818,673.397 776.775,718.89 748.683,746.962 720.547,775.002 674.927,775.023 646.792,746.962L384.892,485.635 122.949,746.962C94.814,775.023 49.1957,775.002 21.1022,746.962 -7.03405,718.89 -7.03405,673.397 21.1022,645.324L283.001,384.018 21.1022,122.67C-7.03405,94.5986 -7.03405,49.1265 21.1022,21.0535 35.1489,7.01784 53.5769,2E-06 72.0101,0z" Stretch="Uniform" Fill="#D8FFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <TransformGroup.Children>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup.Children>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </Viewbox>
+            </Button>
+        </Grid>
         <!--Bottom Player-->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2" Height="50" Background="#FF232220">
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" Height="50" Background="#FF232220">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10" />
                 <ColumnDefinition Width="50" />
@@ -40,14 +81,6 @@
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="50" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="2" HorizontalAlignment="Right" Width="29" Margin="0">
-                <Grid.Background>
-                    <LinearGradientBrush EndPoint="0,0" StartPoint="0.5,0">
-                        <GradientStop Color="#FF232220" Offset="0"/>
-                        <GradientStop Offset="1" Color="#00232220"/>
-                    </LinearGradientBrush>
-                </Grid.Background>
-            </Grid>
             <Button Grid.Column="1" Style="{DynamicResource ControlBtns}">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>
@@ -134,6 +167,14 @@
                 <TextBlock Margin="5,8,1,0" Foreground="White"><Run Text="Blackmill"/></TextBlock>
                 <TextBlock Margin="5,0,1,0" Foreground="#99FFFFFF"><Run Text="Robert Miles - Children (Blackmill Dubstep Remix)"/></TextBlock>
             </StackPanel>
+            <Grid Grid.Column="9" HorizontalAlignment="Right" Width="29" Margin="0">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="0.5,0">
+                        <GradientStop Color="#FF232220" Offset="0"/>
+                        <GradientStop Offset="1" Color="#00232220"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+            </Grid>
             <Button Grid.Column="10" Style="{DynamicResource ControlBtns}">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>

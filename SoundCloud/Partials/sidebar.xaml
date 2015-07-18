@@ -5,7 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" d:DesignHeight="670" d:DesignWidth="300" Title="sidebar">
 
-    <Grid Background="#FFE9EDFF">
-        
-    </Grid>
+    <StackPanel Background="#FFE9EDFF">
+        <Label>Menu</Label>
+        <ListBox>
+            <ListBoxItem>
+                <Label>Stream</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Explore</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Follow</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Messages</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Play Queue</Label>
+            </ListBoxItem>
+        </ListBox>
+        <Label>Your profile</Label>
+        <ListBox>
+            <ListBoxItem>
+                <Label>Likes</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Playlist</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Sets</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Followers</Label>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Label>Followings</Label>
+            </ListBoxItem>
+        </ListBox>
+    </StackPanel>
 </Page>

@@ -17,6 +17,16 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource SoundCloudOrange}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource SoundCloudOrange}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
     <Style x:Key="HeaderText" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="VerticalAlignment" Value="Bottom" />
@@ -29,6 +39,30 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="Opacity" Value="0.6" />
         <Setter Property="LineHeight" Value="20" />
+    </Style>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" Padding="6">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Background" Value="#19FFFFFF"/>
+            </Trigger>
+            <!--Will add click/pressed style later time for bed haha-->
+            <Trigger Property="IsPressed"  Value="True">
+                <Setter Property="Background" Value="#33FFFFFF"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style x:Key="ControlBtns" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
