@@ -30,10 +30,5 @@ namespace SoundCloud
         {
             get { return this.FrameContent; }
         }
-
-        private void MainWindowInit(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

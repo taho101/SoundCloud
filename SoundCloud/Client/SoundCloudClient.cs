@@ -44,6 +44,25 @@ namespace SoundCloud.Client
             return response.Data;
         }
 
+        /// <summary>
+        /// Receives the streaming response from the SoundCloud API
+        /// </summary>
+        public IRestResponse GetStream(string uri)
+        {
+            uri = this.RemoveDomain(uri);
+            var request = this.SetRequest(uri, Method.GET);
+
+            return this.client.Execute(request);
+        }
+
+        /// <summary>
+        /// Remove the default url from the uri string
+        /// </summary>
+        protected string RemoveDomain(string uri)
+        {
+            return uri.Replace(Properties.Settings.Default.APIUrl + "/", "");
+        }
+
 
         /// <summary>
         /// Adds standard parameters to the API request

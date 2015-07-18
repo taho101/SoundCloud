@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Logic\SoundCloudStream.cs" />
     <Compile Include="Tests\APITests.cs" />
     <Page Include="Elements\loading_indicator.xaml">
       <SubType>Designer</SubType>
