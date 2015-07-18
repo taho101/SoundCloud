@@ -11,5 +11,7 @@ namespace SoundCloud.Objects
         public int id {get; set;}
 
         public string title { get; set; }
+
+        public string created_at { get; set; }
     }
 }
