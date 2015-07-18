@@ -1,8 +1,22 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
     <SolidColorBrush Color="#FFFF5500" x:Key="SoundCloudOrange"/>
     <SolidColorBrush Color="#FFFFFFFF" x:Key="SoundCloudWhite"/>
 
-
+    <Style TargetType="{x:Type Controls:ToggleSwitch}">
+        <Setter Property="OnSwitchBrush" Value="DarkGreen" />
+        <Setter Property="OffSwitchBrush" Value="Black" />
+        <Setter Property="ThumbIndicatorBrush" Value="#FF949599" />
+        <Setter Property="ThumbIndicatorDisabledBrush" Value="#FF949599" />
+        <Setter Property="OffLabel" Value="Avaible Offline" />
+        <Setter Property="OnLabel" Value="Avaible Offline" />
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Foreground" Value="DarkGreen" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <Style x:Key="HeaderText" TargetType="{x:Type TextBlock}">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="VerticalAlignment" Value="Bottom" />

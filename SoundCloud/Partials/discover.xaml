@@ -9,11 +9,36 @@
 
     <Border Padding="10" Background="#FFF4FAFA">
         <Grid>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                <TextBlock Text="Discover" Style="{DynamicResource HeaderText}" />
-                <TextBlock Text="/ new music you should try" Style="{DynamicResource SubHeaderText}" />
-            </StackPanel>
-            <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="37" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="150" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                    <TextBlock Text="Discover" Style="{DynamicResource HeaderText}" />
+                    <TextBlock Text="/ new music you should try" Style="{DynamicResource SubHeaderText}" />
+                </StackPanel>
+                <Controls:ToggleSwitch Grid.Column="1" />
+            </Grid>
+            <ListBox ItemsSource="{Binding Source}" IsSynchronizedWithCurrentItem="True" Name="trackList" HorizontalAlignment="Right" Width="114" Margin="0,48,12,32">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0" Grid.Row="1"/>
         </Grid>
     </Border>
 </Page>
