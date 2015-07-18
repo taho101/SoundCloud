@@ -41,5 +41,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-SoundCloud/bin/Debug/
-SoundCloud/bin/Release/
+SoundCloud/bin/*.exe
+SoundCloud/bin/*.pdb
+SoundCloud/bin/*.Cache
+SoundCloud/bin/*.cache
+SoundCloud/bin/*.baml
+SoundCloud/bin/*.cs
+SoundCloud/bin/*.resources
