@@ -20,6 +20,7 @@ namespace SoundCloud.Client
             this.client = new RestClient(Properties.Settings.Default.APIUrl);
         }
 
+        [Obsolete("This method is unfinished, therefore obsolete. Do not use")]
         public void Connect()
         {
             var request = this.SetRequest("connect", Method.GET);
@@ -30,6 +31,10 @@ namespace SoundCloud.Client
 
         }
 
+
+        /// <summary>
+        /// Fetches list of thracks from the SoundCloud API
+        /// </summary>
         public List<Track> GetTracks()
         {
             var request = this.SetRequest("tracks", Method.GET);
@@ -39,6 +44,10 @@ namespace SoundCloud.Client
             return response.Data;
         }
 
+
+        /// <summary>
+        /// Adds standard parameters to the API request
+        /// </summary>
         protected RestRequest SetRequest(string call, Method method)
         {
             var request = new RestRequest(call, method);

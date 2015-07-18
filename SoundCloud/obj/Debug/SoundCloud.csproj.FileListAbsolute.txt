@@ -54,3 +54,29 @@ C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\o
 C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.exe
 C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.pdb
 C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csprojResolveAssemblyReference.cache
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\MahApps.Metro.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\NAudio.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\System.Windows.Interactivity.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\MahApps.Metro.xml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\NAudio.xml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\de\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\es\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\fr\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\it\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\ja\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\ko\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Elements\loading_indicator.baml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Partials\sidebar.baml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Style\Global.baml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Style\TrackSlider.baml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\App.baml
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Elements\loading_indicator.g.cs
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Partials\discover.g.cs
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Partials\sidebar.g.cs
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud_MarkupCompile.lref
+C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Partials\discover.baml
