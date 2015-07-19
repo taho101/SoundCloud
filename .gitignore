@@ -48,3 +48,7 @@ SoundCloud/bin/*.cache
 SoundCloud/bin/*.baml
 SoundCloud/bin/*.cs
 SoundCloud/bin/*.resources
+SoundCloud/obj/Debug/SoundCloud.exe
+*.baml
+SoundCloud/obj/Debug/MainWindow.g.cs
+*.baml

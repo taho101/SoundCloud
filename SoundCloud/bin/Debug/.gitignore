@@ -42,3 +42,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 [^.]*
+*.baml
+*.g.cs
+*.cs
+*.resources
+*.pdb
