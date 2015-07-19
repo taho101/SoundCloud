@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="35" />
                 <ColumnDefinition Width="35" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="200" />
             </Grid.ColumnDefinitions>
             <!--This UI is NOT done it have to think of something neat but this is just for the structure and functionality-->
             <Button HorizontalAlignment="Left" Margin="3" Command="{x:Static NavigationCommands.BrowseBack}" IsEnabled="{Binding Frame.CanGoBack, ElementName=FrameContent}">
@@ -56,7 +56,11 @@
             </Button>
             <TextBox Width="150" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <Grid Grid.Column="3">
-                <Button VerticalAlignment="Center">Login</Button>
+                <Button x:Name="loginbtn" VerticalAlignment="Center" Click="Button_Click">Login</Button>
+                <StackPanel x:Name="Logged_in_ui" Orientation="Horizontal" Visibility="Collapsed" HorizontalAlignment="Right">
+                    <Image Source="https://i1.sndcdn.com/avatars-000038209308-jx1q1t-t200x200.jpg" Margin="0,0,10,0" />
+                    <Label VerticalAlignment="Center" Margin="0,0,10,0">Welcome, Taho101</Label>
+                </StackPanel>
             </Grid>
         </Grid>
         <!--Sidebar Frame view-->

@@ -30,5 +30,12 @@ namespace SoundCloud
         {
             get { return this.FrameContent; }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //This is just static shit will be removed once its dynamic
+            loginbtn.Visibility = Visibility.Collapsed;
+            Logged_in_ui.Visibility = Visibility.Visible;
+        }
     }
 }
