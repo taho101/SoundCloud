@@ -65,6 +65,53 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style x:Key="ControlToggleBtns" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Padding" Value="17"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True"/>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True"/>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="#FF838383"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+            <!--Will add click/pressed style later time for bed haha-->
+            <Trigger Property="IsPressed"  Value="True">
+                <Setter Property="Background" Value="#FF2D2C2A"/>
+            </Trigger>
+            <Trigger Property="IsChecked"  Value="True">
+                <Setter Property="Background" Value="#FF2D2C2A"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ControlToggleBtnsPath" TargetType="{x:Type Path}">
+        <Setter Property="Fill" Value="#FFFFFFFF"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}, Path=IsMouseOver}" Value="True">
+                <Setter Property="Fill" Value="{StaticResource SoundCloudOrange}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}, Path=IsChecked}" Value="True">
+                <Setter Property="Fill" Value="{StaticResource SoundCloudOrange}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
     <Style x:Key="ControlBtns" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
