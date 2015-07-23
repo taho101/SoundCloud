@@ -53,7 +53,6 @@ C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\o
 C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csproj.GenerateResource.Cache
 C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.exe
 C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.pdb
-C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\obj\Debug\SoundCloud.csprojResolveAssemblyReference.cache
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\MahApps.Metro.dll
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\Microsoft.Expression.Drawing.dll
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\bin\Debug\NAudio.dll
@@ -80,3 +79,6 @@ C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Partials\sidebar.g.
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\SoundCloud_MarkupCompile.lref
 C:\Personal\Workspace\CSharp\SoundCloud\SoundCloud\obj\Debug\Partials\discover.baml
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\Hardcodet.Wpf.TaskbarNotification.dll
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\Hardcodet.Wpf.TaskbarNotification.pdb
+C:\Users\Alexander\Documents\Visual Studio 2013\Projects\SoundCloud\SoundCloud\bin\Debug\Hardcodet.Wpf.TaskbarNotification.xml

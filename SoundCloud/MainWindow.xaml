@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Elements="clr-namespace:SoundCloud.Elements" x:Name="MainPlayer" x:Class="SoundCloud.MainWindow"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="MainWindow" Height="720" Width="1280">
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        Title="MainWindow" Height="720" Width="1280" Closing="MainPlayer_Closing" Icon="Images/soundcloud-logo.ico">
+    <!--<tb:TaskbarIcon x:Name="myNotifyIcon" Visibility="Visible" ToolTipText="Fallback ToolTip for Windows xp" IconSource="/Images/TrayIcons/Logo.ico" ContextMenu="{StaticResource TrayMenu}" MenuActivation="LeftOrRightClick" TrayPopup="{StaticResoure TrayStatusPopup}" PopupActivation="DoubleClick" TrayToolTip="{StaticResource TrayToolTip}" />-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
@@ -14,7 +16,19 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Grid Grid.ColumnSpan="2" Background="#FFEAEAEA">
+        <tb:TaskbarIcon ToolTipText="hello world" IconSource="Images/soundcloud-logo.ico" TrayMouseDoubleClick="TaskbarIcon_TrayMouseDoubleClick">
+            <!--Need more?, read more here-->
+            <!--http://www.codeproject.com/Articles/36468/WPF-NotifyIcon-->
+            
+            <!-- Set a simple context menu  -->
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu Background="white">
+                    <MenuItem Header="First Menu Item" />
+                    <MenuItem Header="Second Menu Item" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+            <Grid Grid.ColumnSpan="2" Background="#FFEAEAEA">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="35" />
                 <ColumnDefinition Width="35" />

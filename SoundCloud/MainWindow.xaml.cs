@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +22,16 @@ namespace SoundCloud
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
             ContentFrame.Navigate(new Partials.discover());
+
+            /*TaskbarIcon tbi = new TaskbarIcon();
+            Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/YourReferencedAssembly;component/YourPossibleSubFolder/YourResourceFile.ico")).Stream;
+            tbi.Icon = new System.Drawing.Icon(iconStream);
+            tbi.ToolTipText = "hello world";*/
         }
 
         public Frame ContentFrame
@@ -36,6 +44,17 @@ namespace SoundCloud
             //This is just static shit will be removed once its dynamic
             loginbtn.Visibility = Visibility.Collapsed;
             Logged_in_ui.Visibility = Visibility.Visible;
+        }
+
+        private void MainPlayer_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
+
+        private void TaskbarIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            this.Show();
         }
     }
 }
