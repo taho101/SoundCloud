@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using RestSharp;
 using SoundCloud.Client;
 using SoundCloud.Objects;
-using SoundCloud.Logic;
+using SoundCloud.Client;
 
 namespace SoundCloud.Partials
 {
