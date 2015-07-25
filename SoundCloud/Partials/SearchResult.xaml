@@ -44,10 +44,16 @@
                 <TextBlock Text="Duration" Grid.Column="4"/>
             </Grid>
         </Border>
-        <ListBox ItemsSource="{Binding Songs}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2">
+        <ListBox ItemsSource="{Binding Songs}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2" SelectedItem="{Binding Songs, Mode=TwoWay}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border Padding="5" BorderBrush="#FF222327" BorderThickness="0,0,0,1">
+                        <Border.CommandBindings>
+                            <CommandBinding Command="Open" Executed="CommandBinding_Executed" />
+                        </Border.CommandBindings>
+                        <Border.InputBindings>
+                            <MouseBinding MouseAction="LeftDoubleClick" CommandParameter="{Binding stream_url}" Command="Open" />
+                        </Border.InputBindings>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10" />
@@ -57,7 +63,7 @@
                                 <ColumnDefinition Width="100" />
                                 <ColumnDefinition Width="10" />
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Padding="0" Click="Song_Click" CommandParameter="{Binding stream_url}">
+                            <Button Grid.Column="1" Padding="0">
                                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                                     <Grid>
                                         <Path Data="M215.68,0C292.242,0.004216 365.634,42.1602 404.47,114.292 458.543,13.9345 579.463,-28.3974 682.751,20.0872 791.16,70.9477 838.901,202.422 789.378,313.761 740.008,424.79 404.432,768 404.432,768 402.348,766.637 68.9311,424.79 19.5614,313.761 -29.9588,202.422 17.7792,70.9477 126.225,20.0872 155.275,6.45091 185.72,-0.001663 215.68,0z" Stretch="Uniform" Style="{DynamicResource ControlBtnsPath}" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
@@ -73,9 +79,9 @@
                                     </Grid>
                                 </Viewbox>
                             </Button>
-                            <TextBlock Text="{Binding title}" Grid.Column="1"/>
-                            <TextBlock Text="{Binding user.username}" Grid.Column="2"/>
-                            <TextBlock Text="{Binding duration}" Grid.Column="3"/>
+                            <TextBlock Text="{Binding title}" Grid.Column="2"/>
+                            <TextBlock Text="{Binding user.username}" Grid.Column="3"/>
+                            <TextBlock Text="{Binding duration}" Grid.Column="4"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
