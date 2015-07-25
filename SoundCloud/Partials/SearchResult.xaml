@@ -5,7 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:Elements="clr-namespace:SoundCloud.Elements" x:Name="MainPlayer"
       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:vm="clr-namespace:SoundCloud.ViewModels"
       mc:Ignorable="d" d:DesignHeight="670" d:DesignWidth="1280" Title="SearchResult">
+
+    <Page.DataContext>
+        <vm:SongsListViewModel x:Name="ViewModel" />
+    </Page.DataContext>
 
     <Grid Background="White" >
         <Grid.RowDefinitions>
@@ -39,7 +44,7 @@
                 <TextBlock Text="Duration" Grid.Column="4"/>
             </Grid>
         </Border>
-        <ListBox ItemsSource="{Binding Results}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2" >
+        <ListBox ItemsSource="{Binding Songs}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border Padding="5" BorderBrush="#FF222327" BorderThickness="0,0,0,1">
@@ -68,9 +73,9 @@
                                     </Grid>
                                 </Viewbox>
                             </Button>
-                            <TextBlock Text="{Binding Name}" Grid.Column="1"/>
-                            <TextBlock Text="{Binding Name}" Grid.Column="2"/>
-                            <TextBlock Text="{Binding Name}" Grid.Column="3"/>
+                            <TextBlock Text="{Binding title}" Grid.Column="1"/>
+                            <TextBlock Text="{Binding user.username}" Grid.Column="2"/>
+                            <TextBlock Text="{Binding duration}" Grid.Column="3"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

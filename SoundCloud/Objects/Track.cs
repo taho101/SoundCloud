@@ -14,7 +14,7 @@ namespace SoundCloud.Objects
 
         public int user_id { get; set; }
 
-        //missing representation of "user"
+        public User user { get; set; }
 
         public string title { get; set; }
 

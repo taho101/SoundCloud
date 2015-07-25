@@ -26,7 +26,7 @@ namespace SoundCloud
         public MainWindow()
         {
             InitializeComponent();
-            ContentFrame.Navigate(new Partials.discover());
+            ContentFrame.Navigate(new Partials.SearchResult());
 
             /*TaskbarIcon tbi = new TaskbarIcon();
             Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/YourReferencedAssembly;component/YourPossibleSubFolder/YourResourceFile.ico")).Stream;

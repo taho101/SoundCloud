@@ -15,7 +15,7 @@ namespace SoundCloud.ViewModels
         private SoundCloudClient client = new SoundCloudClient();
         private ObservableCollection<Track> _results = new ObservableCollection<Track>();
 
-        public ObservableCollection<Track> Results
+        public ObservableCollection<Track> Songs
         {
             get 
             {
@@ -23,7 +23,7 @@ namespace SoundCloud.ViewModels
 
                 return _results; 
             }
-            set { SetProperty(ref _results, value, "Results"); }
+            set { SetProperty(ref _results, value, "Songs"); }
         }
 
     }
