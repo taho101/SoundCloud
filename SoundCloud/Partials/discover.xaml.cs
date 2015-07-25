@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using RestSharp;
 using SoundCloud.Client;
 using SoundCloud.Objects;
-using SoundCloud.Client;
+using System.Collections.ObjectModel;
 
 namespace SoundCloud.Partials
 {
@@ -37,7 +37,7 @@ namespace SoundCloud.Partials
             {
                 var client = new SoundCloudClient();
 
-                List<Track> tracks = client.GetTracks();
+                ObservableCollection<Track> tracks = client.GetTracks();
 
                 foreach (var track in tracks)
                 {

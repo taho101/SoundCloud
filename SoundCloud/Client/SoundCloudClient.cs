@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using RestSharp;
 using System.Windows;
 using SoundCloud.Objects;
+using System.Collections.ObjectModel;
 
 namespace SoundCloud.Client
 {
@@ -35,11 +36,11 @@ namespace SoundCloud.Client
         /// <summary>
         /// Fetches list of thracks from the SoundCloud API
         /// </summary>
-        public List<Track> GetTracks()
+        public ObservableCollection<Track> GetTracks()
         {
             var request = this.SetRequest("tracks", Method.GET);
 
-            var response = this.client.Execute<List<Track>>(request);
+            var response = this.client.Execute<ObservableCollection<Track>>(request);
 
             return response.Data;
         }

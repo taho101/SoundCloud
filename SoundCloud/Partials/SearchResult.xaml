@@ -39,7 +39,7 @@
                 <TextBlock Text="Duration" Grid.Column="4"/>
             </Grid>
         </Border>
-        <ListBox ItemsSource="{Binding Source}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2" >
+        <ListBox ItemsSource="{Binding Results}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border Padding="5" BorderBrush="#FF222327" BorderThickness="0,0,0,1">

@@ -79,7 +79,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Client\SoundCloudStream.cs" />
+    <Compile Include="Partials\SearchResult.xaml.cs">
+      <DependentUpon>SearchResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tests\APITests.cs" />
+    <Compile Include="ViewModels\SongsListViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Elements\loading_indicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +106,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Partials\discover.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Partials\SearchResult.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
