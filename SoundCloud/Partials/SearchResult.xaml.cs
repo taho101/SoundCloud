@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoundCloud.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,22 @@ namespace SoundCloud.Partials
     /// </summary>
     public partial class SearchResult : Page
     {
+        private SoundCloudClient client = new SoundCloudClient();
+
         public SearchResult()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Song stream event handler
+        /// </summary>
+        public void Song_Click(object sender, RoutedEventArgs e)
+        {
+            var record = ((Button) e.OriginalSource).CommandParameter;
+            var response = client.GetStream(record.ToString());
+
+            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
         }
     }
 }
