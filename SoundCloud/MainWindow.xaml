@@ -24,7 +24,7 @@
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu Background="white">
                     <MenuItem Header="First Menu Item" />
-                    <MenuItem Header="Second Menu Item" />
+                    <MenuItem Header="Exit" Click="CloseSoundcloud_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>

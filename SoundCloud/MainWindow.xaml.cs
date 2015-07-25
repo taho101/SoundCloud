@@ -56,5 +56,10 @@ namespace SoundCloud
         {
             this.Show();
         }
+
+        private void CloseSoundcloud_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
