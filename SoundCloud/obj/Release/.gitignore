@@ -47,3 +47,9 @@ Temporary Items
 *.cs
 *.resources
 *.pdb
+*.txt
+*.Cache
+*.cache
+*.exe
+*.lref
+*.dll
