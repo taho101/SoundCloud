@@ -9,6 +9,7 @@ using NAudio.Wave;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace SoundCloud.Client
 {
@@ -54,7 +55,8 @@ namespace SoundCloud.Client
                     waveOut.Play();
                     while (waveOut.PlaybackState == PlaybackState.Playing)
                     {
-                        System.Threading.Thread.Sleep(100);
+                        System.Threading.Thread.Sleep(10);
+                        Application.DoEvents();
                     }
                 }
             }

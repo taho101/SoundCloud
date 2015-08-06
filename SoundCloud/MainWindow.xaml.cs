@@ -54,7 +54,14 @@ namespace SoundCloud
 
         private void TaskbarIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
         {
-            this.Show();
+            if (this != null && this.Visibility == Visibility.Hidden)
+            {                
+                this.Show();
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+            }
         }
 
         private void CloseSoundcloud_Click(object sender, RoutedEventArgs e)
