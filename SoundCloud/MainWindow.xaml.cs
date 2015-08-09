@@ -26,7 +26,7 @@ namespace SoundCloud
         public MainWindow()
         {
             InitializeComponent();
-            ContentFrame.Navigate(new Partials.SearchResult());
+            ContentFrame.Navigate(new Partials.ViewPlaylist());
         }
 
         public Frame ContentFrame
