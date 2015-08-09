@@ -83,9 +83,16 @@
     <Compile Include="Partials\SearchResult.xaml.cs">
       <DependentUpon>SearchResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Partials\ViewPlaylist.xaml.cs">
+      <DependentUpon>ViewPlaylist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Partials\ViewSong.xaml.cs">
+      <DependentUpon>ViewSong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tests\APITests.cs" />
     <Compile Include="ViewModels\SongsListViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ViewModelConverters.cs" />
     <Page Include="Elements\loading_indicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,7 +113,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Partials\discover.xaml">
+    <Page Include="Partials\Discover.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -114,7 +121,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Partials\sidebar.xaml">
+    <Page Include="Partials\Sidebar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Partials\ViewPlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Partials\ViewSong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,11 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\Track.cs" />
-    <Compile Include="Partials\discover.xaml.cs">
-      <DependentUpon>discover.xaml</DependentUpon>
+    <Compile Include="Partials\Discover.xaml.cs">
+      <DependentUpon>Discover.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Partials\sidebar.xaml.cs">
-      <DependentUpon>sidebar.xaml</DependentUpon>
+    <Compile Include="Partials\Sidebar.xaml.cs">
+      <DependentUpon>Sidebar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

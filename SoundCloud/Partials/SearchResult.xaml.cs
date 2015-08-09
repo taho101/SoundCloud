@@ -54,5 +54,21 @@ namespace SoundCloud.Partials
 
             SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
         }
+
+        private void trackList_Loaded(object sender, RoutedEventArgs e)
+        {
+            trackList.AddHandler(MouseWheelEvent, new RoutedEventHandler(MyMouseWheelH), true);
+        }
+        private void MyMouseWheelH(object sender, RoutedEventArgs e)
+        {
+
+            MouseWheelEventArgs eargs = (MouseWheelEventArgs)e;
+
+            double x = (double)eargs.Delta;
+
+            double y = instScroll.VerticalOffset;
+
+            instScroll.ScrollToVerticalOffset(y - x);
+        }
     }
 }

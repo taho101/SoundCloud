@@ -11,11 +11,14 @@
     <Page.DataContext>
         <vm:SongsListViewModel x:Name="ViewModel" />
     </Page.DataContext>
+    <!--Used to convert seconds into time-->
+    <Page.Resources>
+        <vm:DurationConverter x:Key="DurationConverter" />
+    </Page.Resources>
 
     <Grid Background="White" >
         <Grid.RowDefinitions>
             <RowDefinition Height="37" />
-            <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid Margin="10,0">
@@ -29,64 +32,68 @@
             </StackPanel>
             <Controls:ToggleSwitch Grid.Column="1" />
         </Grid>
-        <Border Padding="5" Grid.Row="1" BorderBrush="#FF222327" BorderThickness="0,0,0,1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="100" />
-                    <ColumnDefinition Width="10" />
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="Title" Grid.Column="2"/>
-                <TextBlock Text="Artist" Grid.Column="3"/>
-                <TextBlock Text="Duration" Grid.Column="4"/>
-            </Grid>
-        </Border>
-        <ListBox ItemsSource="{Binding Songs}" IsSynchronizedWithCurrentItem="True" Name="trackList" Margin="0" Grid.Row="2" SelectedItem="{Binding Songs, Mode=TwoWay}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border Padding="5" BorderBrush="#FF222327" BorderThickness="0,0,0,1">
-                        <Border.CommandBindings>
-                            <CommandBinding Command="Open" Executed="CommandBinding_Executed" />
-                        </Border.CommandBindings>
-                        <Border.InputBindings>
-                            <MouseBinding MouseAction="LeftDoubleClick" CommandParameter="{Binding stream_url}" Command="Open" />
-                        </Border.InputBindings>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition Width="30" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
-                                <ColumnDefinition Width="10" />
-                            </Grid.ColumnDefinitions>
-                            <Button Grid.Column="1" Padding="0">
-                                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-                                    <Grid>
-                                        <Path Data="M215.68,0C292.242,0.004216 365.634,42.1602 404.47,114.292 458.543,13.9345 579.463,-28.3974 682.751,20.0872 791.16,70.9477 838.901,202.422 789.378,313.761 740.008,424.79 404.432,768 404.432,768 402.348,766.637 68.9311,424.79 19.5614,313.761 -29.9588,202.422 17.7792,70.9477 126.225,20.0872 155.275,6.45091 185.72,-0.001663 215.68,0z" Stretch="Uniform" Style="{DynamicResource ControlBtnsPath}" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
-                                            <Path.RenderTransform>
-                                                <TransformGroup>
-                                                    <TransformGroup.Children>
-                                                        <RotateTransform Angle="0" />
-                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
-                                                    </TransformGroup.Children>
-                                                </TransformGroup>
-                                            </Path.RenderTransform>
-                                        </Path>
-                                    </Grid>
-                                </Viewbox>
-                            </Button>
-                            <TextBlock Text="{Binding title}" Grid.Column="2"/>
-                            <TextBlock Text="{Binding user.username}" Grid.Column="3"/>
-                            <TextBlock Text="{Binding duration}" Grid.Column="4"/>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ScrollViewer x:Name="instScroll" Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <Border Padding="0,5" BorderBrush="#FFF6F6F6" BorderThickness="0,0,0,1" Height="30">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Title" Grid.Column="2"/>
+                        <TextBlock Text="Artist" Grid.Column="3"/>
+                        <TextBlock Text="Duration" Grid.Column="4"/>
+                    </Grid>
+                </Border>
+                <ListBox ItemsSource="{Binding Songs}" x:Name="trackList" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" SelectedItem="{Binding Songs, Mode=OneWay}" IsSynchronizedWithCurrentItem="True" VerticalAlignment="Top" Loaded="trackList_Loaded">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="0,5" BorderBrush="#FFF6F6F6" BorderThickness="0,0,0,1">
+                                <Border.CommandBindings>
+                                    <CommandBinding Command="Open" Executed="CommandBinding_Executed" />
+                                </Border.CommandBindings>
+                                <Border.InputBindings>
+                                    <MouseBinding MouseAction="LeftDoubleClick" CommandParameter="{Binding stream_url}" Command="Open" />
+                                </Border.InputBindings>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="10" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="1" Padding="0" Margin="0,0,10,0" VerticalAlignment="Center">
+                                        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                                            <Grid>
+                                                <Path Data="M215.68,0C292.242,0.004216 365.634,42.1602 404.47,114.292 458.543,13.9345 579.463,-28.3974 682.751,20.0872 791.16,70.9477 838.901,202.422 789.378,313.761 740.008,424.79 404.432,768 404.432,768 402.348,766.637 68.9311,424.79 19.5614,313.761 -29.9588,202.422 17.7792,70.9477 126.225,20.0872 155.275,6.45091 185.72,-0.001663 215.68,0z" Stretch="Uniform" Style="{DynamicResource ControlBtnsPath}" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                                    <Path.RenderTransform>
+                                                        <TransformGroup>
+                                                            <RotateTransform Angle="0" />
+                                                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                        </TransformGroup>
+                                                    </Path.RenderTransform>
+                                                </Path>
+                                            </Grid>
+                                        </Viewbox>
+                                    </Button>
+                                    <TextBlock Text="{Binding title}" Grid.Column="2" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding user.username}" Grid.Column="3" VerticalAlignment="Center"/>
+                                    <!--<TextBlock Text="{Binding duration}" Grid.Column="4" VerticalAlignment="Center"/>-->
+                                    <!--Used to convert seconds into time-->
+                                    <TextBlock Text="{Binding duration, Converter={StaticResource DurationConverter}}" Grid.Column="4" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
         <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0" Grid.Row="2"/>
     </Grid>
 </Page>

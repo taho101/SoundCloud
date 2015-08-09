@@ -27,11 +27,6 @@ namespace SoundCloud
         {
             InitializeComponent();
             ContentFrame.Navigate(new Partials.SearchResult());
-
-            /*TaskbarIcon tbi = new TaskbarIcon();
-            Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/YourReferencedAssembly;component/YourPossibleSubFolder/YourResourceFile.ico")).Stream;
-            tbi.Icon = new System.Drawing.Icon(iconStream);
-            tbi.ToolTipText = "hello world";*/
         }
 
         public Frame ContentFrame
