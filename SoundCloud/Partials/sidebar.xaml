@@ -3,42 +3,52 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" d:DesignHeight="670" d:DesignWidth="300" Title="sidebar">
+      mc:Ignorable="d" d:DesignHeight="670" d:DesignWidth="300" Title="sidebar" Loaded="Page_Loaded">
 
-    <StackPanel Background="#FFE9EDFF">
-        <Label>Menu</Label>
-        <ListBox x:Name="menulist" SelectionChanged="Menu_SelectionChanged" >
-            <ListBoxItem>
+    <StackPanel Background="#FF333333">
+        <ListBox x:Name="menulist" SelectionChanged="Menu_SelectionChanged" Style="{DynamicResource menuList}">
+            <ListBox.Resources>
+                <Style BasedOn="{StaticResource MenuListLabel}" TargetType="{x:Type Label}" />
+            </ListBox.Resources>
+            <ListBoxItem IsEnabled="False">
+                <Label Foreground="#99FFFFFF" Margin="5,0,0,0">Menu</Label>
+            </ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Stream</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Explore</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Follow</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Messages</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Play Queue</Label>
             </ListBoxItem>
-        </ListBox>
-        <Label>Your profile</Label>
-        <ListBox x:Name="profilelist" SelectionChanged="profile_SelectionChanged">
-            <ListBoxItem>
+        <!--</ListBox>-->
+            <ListBoxItem IsEnabled="False">
+                <Label Foreground="#99FFFFFF" Margin="5,0,0,0">Your profile</Label>
+            </ListBoxItem>
+            <!--<ListBox x:Name="profilelist" SelectionChanged="profile_SelectionChanged" Style="{DynamicResource menuList}">-->
+            <!--<ListBox.Resources>
+                <Style BasedOn="{StaticResource MenuListLabel}" TargetType="{x:Type Label}" />
+            </ListBox.Resources>-->
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Likes</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Playlist</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Sets</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Followers</Label>
             </ListBoxItem>
-            <ListBoxItem>
+            <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Followings</Label>
             </ListBoxItem>
         </ListBox>

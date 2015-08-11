@@ -80,6 +80,9 @@
     </ApplicationDefinition>
     <Compile Include="Client\SoundCloudStream.cs" />
     <Compile Include="Objects\User.cs" />
+    <Compile Include="Partials\Explore.xaml.cs">
+      <DependentUpon>Explore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Partials\SearchResult.xaml.cs">
       <DependentUpon>SearchResult.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
     <Page Include="Partials\Discover.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Partials\Explore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Partials\SearchResult.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -8,7 +8,7 @@
     <!--<tb:TaskbarIcon x:Name="myNotifyIcon" Visibility="Visible" ToolTipText="Fallback ToolTip for Windows xp" IconSource="/Images/TrayIcons/Logo.ico" ContextMenu="{StaticResource TrayMenu}" MenuActivation="LeftOrRightClick" TrayPopup="{StaticResoure TrayStatusPopup}" PopupActivation="DoubleClick" TrayToolTip="{StaticResource TrayToolTip}" />-->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -28,7 +28,13 @@
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
-            <Grid Grid.ColumnSpan="2" Background="#FF333333">
+        <Grid Background="#FFFF5500">
+            <StackPanel Orientation="Horizontal" Margin="0,7" HorizontalAlignment="Center">
+                <Image Source="https://a-v2.sndcdn.com/assets/images/header/cloud-e365a4.png" />
+                <Image Source="https://a-v2.sndcdn.com/assets/images/header/wordmark-d95b0a.png" />
+            </StackPanel>
+        </Grid>
+        <Grid Background="#FF333333" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="35" />
                 <ColumnDefinition Width="35" />

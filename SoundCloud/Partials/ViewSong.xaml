@@ -8,7 +8,73 @@
       xmlns:vm="clr-namespace:SoundCloud.ViewModels"
       mc:Ignorable="d" d:DesignHeight="670" d:DesignWidth="1280" Title="ViewSong">
 
-    <Grid>
-        
+    <Grid Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Margin="10,10,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://i1.sndcdn.com/artworks-000004440475-limwcd-t500x500.jpg" />
+                    <StackPanel VerticalAlignment="Top" Margin="0,10,0,0">
+                        <TextBlock Text="Playlist" Style="{DynamicResource SubHeaderText}" />
+                        <TextBlock Text="Random SoundCloud songs, vol. 2" Style="{DynamicResource HeaderText}" Margin="10,0,0,0" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Button Style="{DynamicResource ControlBtns}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="30" Margin="150,0,0,0" Background="{DynamicResource SoundCloudOrange}" Foreground="#CCFFFFFF" Padding="0">
+                <StackPanel Orientation="Horizontal" Margin="-5,-8,-5,-5">
+                    <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                        <Grid>
+                            <Path Visibility="Collapsed" Data="M27.270001,0L44.310001,0 44.310001,48.643002 27.270001,48.643002z M0,0L17.040001,0 17.040001,48.643002 0,48.643002z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path Data="M0,0L384.885,191.965 769.768,383.928 384.885,576.035 0,768 0,383.928z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ControlMediaBtnsPath}">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="0" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </Viewbox>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14"><Run Text="Play"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Controls:ToggleSwitch Grid.Column="1" VerticalAlignment="Bottom" />
+        </Grid>
+        <ScrollViewer x:Name="instScroll" Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <Border Padding="0,5" BorderBrush="#FFF6F6F6" BorderThickness="0,0,0,1" Height="30">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="#" Grid.Column="1"/>
+                        <TextBlock Text="Title" Grid.Column="3"/>
+                        <TextBlock Text="Artist" Grid.Column="4"/>
+                        <TextBlock Text="Duration" Grid.Column="5"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+        <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0" Grid.Row="2"/>
     </Grid>
 </Page>

@@ -60,7 +60,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" FontSize="14"><Run Text="Play"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Controls:ToggleSwitch Grid.Column="1" />
+            <Controls:ToggleSwitch Grid.Column="1" VerticalAlignment="Bottom" />
         </Grid>
         <ScrollViewer x:Name="instScroll" Grid.Row="1">
             <StackPanel Orientation="Vertical">
