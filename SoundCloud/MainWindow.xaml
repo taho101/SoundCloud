@@ -74,7 +74,7 @@
                     </Grid>
                 </Viewbox>
             </Button>
-            <TextBox Width="150" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Width="150" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" KeyUp="TextBox_KeyUp" />
             <Grid Grid.Column="3">
                 <Button x:Name="loginbtn" VerticalAlignment="Center" Click="Button_Click">Login</Button>
                 <StackPanel x:Name="Logged_in_ui" Orientation="Horizontal" Visibility="Collapsed" HorizontalAlignment="Right">

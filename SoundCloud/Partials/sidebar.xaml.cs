@@ -20,23 +20,33 @@ namespace SoundCloud.Partials
     /// </summary>
     public partial class sidebar : Page
     {
+        MainWindow _MainWindow = ((MainWindow)System.Windows.Application.Current.MainWindow);
         public sidebar()
         {
             InitializeComponent();
+            _MainWindow._Sidebar = this;
         }
 
         private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                MainWindow getMainWindow = new MainWindow();
                 switch (menulist.SelectedIndex)
                 {
                     case 1:
-                        getMainWindow.ContentFrame.Navigate(new Partials.discover());
+                        _MainWindow.ContentFrame.Navigate(new Partials.discover());
                         break;
                     case 2:
-                        getMainWindow.ContentFrame.Navigate(new Partials.Explore());
+                        _MainWindow.ContentFrame.Navigate(new Partials.Explore());
+                        break;
+                    case 3:
+                        _MainWindow.ContentFrame.Navigate(new Partials.SearchResult());
+                        break;
+                    case 4:
+                        _MainWindow.ContentFrame.Navigate(new Partials.SearchResult());
+                        break;
+                    default:
+                        _MainWindow.ContentFrame.Navigate(new Partials.discover());
                         break;
                 }
             }
@@ -47,6 +57,9 @@ namespace SoundCloud.Partials
         {
             menulist.SelectedIndex = 1;
         }
-        //object NavigationSystem = getMainWindow.FrameContent.ActualHeight;
+        public int _menulist {
+            get { return menulist.SelectedIndex; }
+            set { menulist.SelectedIndex = value; }
+        }
     }
 }

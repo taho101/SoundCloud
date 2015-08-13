@@ -22,7 +22,7 @@ namespace SoundCloud
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public Partials.sidebar _Sidebar;
         public MainWindow()
         {
             InitializeComponent();
@@ -62,6 +62,11 @@ namespace SoundCloud
         private void CloseSoundcloud_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            _Sidebar._menulist = 3;
         }
     }
 }

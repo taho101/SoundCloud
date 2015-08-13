@@ -20,10 +20,7 @@
                 <Label>Explore</Label>
             </ListBoxItem>
             <ListBoxItem Style="{DynamicResource menuListItem}">
-                <Label>Follow</Label>
-            </ListBoxItem>
-            <ListBoxItem Style="{DynamicResource menuListItem}">
-                <Label>Messages</Label>
+                <Label>Search</Label>
             </ListBoxItem>
             <ListBoxItem Style="{DynamicResource menuListItem}">
                 <Label>Play Queue</Label>
