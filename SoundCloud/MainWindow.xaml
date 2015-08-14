@@ -19,7 +19,7 @@
         <tb:TaskbarIcon ToolTipText="hello world" IconSource="Images/soundcloud-logo.ico" TrayMouseDoubleClick="TaskbarIcon_TrayMouseDoubleClick">
             <!--Need more?, read more here-->
             <!--http://www.codeproject.com/Articles/36468/WPF-NotifyIcon-->
-            
+
             <!-- Set a simple context menu  -->
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu Background="white">
@@ -42,7 +42,7 @@
                 <ColumnDefinition Width="200" />
             </Grid.ColumnDefinitions>
             <!--This UI is NOT done it have to think of something neat but this is just for the structure and functionality-->
-            <Button HorizontalAlignment="Left" Margin="3" Command="{x:Static NavigationCommands.BrowseBack}" IsEnabled="{Binding Frame.CanGoBack, ElementName=FrameContent}">
+            <Button HorizontalAlignment="Left" Margin="7" Command="{x:Static NavigationCommands.BrowseBack}" IsEnabled="{Binding Frame.CanGoBack, ElementName=FrameContent}">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>
                         <Path Data="M210.0732883782,0L284.924011644801,84.1795578002929 151.372742113551,234.311782836914 284.059540209254,388.581604003906 210.03486674734,471.831024169922 0,236.170654296875z" Stretch="Uniform" Fill="White" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
@@ -58,7 +58,7 @@
                     </Grid>
                 </Viewbox>
             </Button>
-            <Button HorizontalAlignment="Left" Grid.Column="1" Margin="3" Command="{x:Static NavigationCommands.BrowseForward}" IsEnabled="{Binding Frame.CanGoForward, ElementName=FrameContent}">
+            <Button HorizontalAlignment="Left" Grid.Column="1" Margin="7" Command="{x:Static NavigationCommands.BrowseForward}" IsEnabled="{Binding Frame.CanGoForward, ElementName=FrameContent}">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>
                         <Path Data="M74.9050602287857,0L284.924011644801,235.649597167969 74.8450321526138,471.831024169922 0,387.655303955078 133.541138109645,237.529968261719 0.886025187453441,83.2672348022461z" Stretch="Uniform" Fill="White" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">

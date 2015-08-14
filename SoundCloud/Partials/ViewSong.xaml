@@ -54,27 +54,7 @@
             </Button>
             <Controls:ToggleSwitch Grid.Column="1" VerticalAlignment="Bottom" />
         </Grid>
-        <ScrollViewer x:Name="instScroll" Grid.Row="1">
-            <StackPanel Orientation="Vertical">
-                <Border Padding="0,5" BorderBrush="#FFF6F6F6" BorderThickness="0,0,0,1" Height="30">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="10" />
-                            <ColumnDefinition Width="40" />
-                            <ColumnDefinition Width="40" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="10" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="#" Grid.Column="1"/>
-                        <TextBlock Text="Title" Grid.Column="3"/>
-                        <TextBlock Text="Artist" Grid.Column="4"/>
-                        <TextBlock Text="Duration" Grid.Column="5"/>
-                    </Grid>
-                </Border>
-            </StackPanel>
-        </ScrollViewer>
+        <StackPanel Grid.Row="1"></StackPanel>
         <Elements:loading_indicator HorizontalAlignment="Center" VerticalAlignment="Center" Height="44" Width="44" Margin="0" Grid.Row="2"/>
     </Grid>
 </Page>
