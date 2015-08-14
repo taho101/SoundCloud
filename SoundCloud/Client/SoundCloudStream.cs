@@ -70,10 +70,5 @@ namespace SoundCloud.Client
         {
             this.playback.Stop();
         }
-
-        public void PausePlayback()
-        {
-            this.playback.Pause();
-        }
     }
 }

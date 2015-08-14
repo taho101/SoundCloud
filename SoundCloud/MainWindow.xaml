@@ -167,7 +167,7 @@
                     </Grid>
                 </Viewbox>
             </Button>
-            <Button Grid.Column="2" Style="{DynamicResource ControlBtns}">
+            <Button Grid.Column="2" Style="{DynamicResource ControlBtns}" Click="Play_Click">
                 <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
                     <Grid>
                         <Path Visibility="Collapsed" Data="M27.270001,0L44.310001,0 44.310001,48.643002 27.270001,48.643002z M0,0L17.040001,0 17.040001,48.643002 0,48.643002z" Stretch="Uniform" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">

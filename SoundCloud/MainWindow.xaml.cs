@@ -1,4 +1,5 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +23,11 @@ namespace SoundCloud
     /// </summary>
     public partial class MainWindow : Window
     {
+        //boolean markers for playback
+        private bool songPaused = false;
+
         public Partials.sidebar _Sidebar;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -67,6 +72,27 @@ namespace SoundCloud
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
         {
             _Sidebar._menulist = 3;
+        }
+
+        //currently not working as intended
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button) sender;
+            WaveOut playback = Properties.Settings.Default.Playback;
+
+            if (playback != null)
+            {
+                if (this.songPaused == true)
+                {
+                    playback.Play();
+                    this.songPaused = false;
+                }
+                else
+                {
+                    playback.Pause();
+                    this.songPaused = true;
+                }
+            }
         }
     }
 }
