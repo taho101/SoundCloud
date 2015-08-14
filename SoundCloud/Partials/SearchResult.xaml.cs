@@ -21,8 +21,6 @@ namespace SoundCloud.Partials
     /// </summary>
     public partial class SearchResult : Page
     {
-        private SoundCloudClient client = new SoundCloudClient();
-
         public SearchResult()
         {
             InitializeComponent();
@@ -33,11 +31,8 @@ namespace SoundCloud.Partials
         /// </summary>
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            var record = e.Parameter;
-            var response = client.GetStream(record.ToString());
-
-            SoundCloudStream stream = new SoundCloudStream();
-            stream.PlayMp3FromUrl(response.ResponseUri.ToString());
+            var logic = new PlaybackLogic();
+            logic.LoadSong(e);
         }
 
         private void trackList_Loaded(object sender, RoutedEventArgs e)

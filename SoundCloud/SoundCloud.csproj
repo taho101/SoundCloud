@@ -78,6 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client\PlaybackLogic.cs" />
     <Compile Include="Client\SoundCloudStream.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Partials\Explore.xaml.cs">
