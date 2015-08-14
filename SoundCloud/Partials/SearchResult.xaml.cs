@@ -31,22 +31,6 @@ namespace SoundCloud.Partials
         /// <summary>
         /// Song stream event handler
         /// </summary>
-        public void Song_Click(object sender, RoutedEventArgs e)
-        {
-            var record = ((Button) e.OriginalSource).CommandParameter;
-            var response = client.GetStream(record.ToString());
-
-            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
-        }
-        public void Song_DoubleClick(object parameter)
-        {
-            var getParameter = parameter as Button;
-            var record = getParameter.CommandParameter;
-            var response = client.GetStream(record.ToString());
-
-            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
-        }
-
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             var record = e.Parameter;
@@ -59,6 +43,7 @@ namespace SoundCloud.Partials
         {
             trackList.AddHandler(MouseWheelEvent, new RoutedEventHandler(MyMouseWheelH), true);
         }
+
         private void MyMouseWheelH(object sender, RoutedEventArgs e)
         {
 

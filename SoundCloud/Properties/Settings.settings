@@ -14,5 +14,8 @@
     <Setting Name="UserId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="Playback" Type="NAudio.Wave.WaveOut" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

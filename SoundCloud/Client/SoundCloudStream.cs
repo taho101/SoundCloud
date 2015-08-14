@@ -20,6 +20,10 @@ namespace SoundCloud.Client
 
         public SoundCloudStream(string url)
         {
+            //stop the song that is currently playing
+            if (Properties.Settings.Default.Playback != null)
+                this.StopPlayback();
+
             this.PlayMp3FromUrl(url);
         }
 
@@ -53,6 +57,10 @@ namespace SoundCloud.Client
                 {
                     waveOut.Init(blockAlignedStream);
                     waveOut.Play();
+                    
+                    //set currently playing song
+                    Properties.Settings.Default.Playback = waveOut;
+
                     while (waveOut.PlaybackState == PlaybackState.Playing)
                     {
                         System.Threading.Thread.Sleep(10);
@@ -61,5 +69,11 @@ namespace SoundCloud.Client
                 }
             }
         }
+
+        public void StopPlayback()
+        {
+            Properties.Settings.Default.Playback.Stop();
+        }
+
     }
 }

@@ -70,5 +70,16 @@ namespace SoundCloud.Properties {
                 this["UserId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::NAudio.Wave.WaveOut Playback {
+            get {
+                return ((global::NAudio.Wave.WaveOut)(this["Playback"]));
+            }
+            set {
+                this["Playback"] = value;
+            }
+        }
     }
 }
