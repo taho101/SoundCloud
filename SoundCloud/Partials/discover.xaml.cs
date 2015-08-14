@@ -29,24 +29,5 @@ namespace SoundCloud.Partials
         {
             InitializeComponent();
         }
-
-        //only for test puropses for now
-        public void setTracks()
-        {
-            if (string.IsNullOrWhiteSpace(Properties.Settings.Default.UserId))
-            {
-                var client = new SoundCloudClient();
-
-                ObservableCollection<Track> tracks = client.GetTracks();
-
-                foreach (var track in tracks)
-                {
-                    var response = client.GetStream(track.stream_url);
-
-                    SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
-                    break;
-                }
-            }
-        }
     }
 }

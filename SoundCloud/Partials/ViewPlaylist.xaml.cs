@@ -22,24 +22,10 @@ namespace SoundCloud.Partials
     public partial class ViewPlaylist : Page
     {
         private SoundCloudClient client = new SoundCloudClient();
+
         public ViewPlaylist()
         {
             InitializeComponent();
-        }
-        public void Song_Click(object sender, RoutedEventArgs e)
-        {
-            var record = ((Button) e.OriginalSource).CommandParameter;
-            var response = client.GetStream(record.ToString());
-
-            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
-        }
-        public void Song_DoubleClick(object parameter)
-        {
-            var getParameter = parameter as Button;
-            var record = getParameter.CommandParameter;
-            var response = client.GetStream(record.ToString());
-
-            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -47,13 +33,15 @@ namespace SoundCloud.Partials
             var record = e.Parameter;
             var response = client.GetStream(record.ToString());
 
-            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
+            SoundCloudStream stream = new SoundCloudStream();
+            stream.PlayMp3FromUrl(response.ResponseUri.ToString());
         }
 
         private void trackList_Loaded(object sender, RoutedEventArgs e)
         {
             trackList.AddHandler(MouseWheelEvent, new RoutedEventHandler(MyMouseWheelH), true);
         }
+
         private void MyMouseWheelH(object sender, RoutedEventArgs e)
         {
 

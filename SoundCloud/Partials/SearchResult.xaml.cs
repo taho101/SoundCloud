@@ -36,7 +36,8 @@ namespace SoundCloud.Partials
             var record = e.Parameter;
             var response = client.GetStream(record.ToString());
 
-            SoundCloudStream stream = new SoundCloudStream(response.ResponseUri.ToString());
+            SoundCloudStream stream = new SoundCloudStream();
+            stream.PlayMp3FromUrl(response.ResponseUri.ToString());
         }
 
         private void trackList_Loaded(object sender, RoutedEventArgs e)

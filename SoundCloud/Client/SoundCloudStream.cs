@@ -18,17 +18,13 @@ namespace SoundCloud.Client
 
         private Stream ms = new MemoryStream();
 
-        public SoundCloudStream(string url)
-        {
-            //stop the song that is currently playing
-            if (Properties.Settings.Default.Playback != null)
-                this.StopPlayback();
-
-            this.PlayMp3FromUrl(url);
-        }
+        private WaveOut playback = Properties.Settings.Default.Playback;
 
         public void PlayMp3FromUrl(string url)
         {
+            //stop the song that is currently playing
+            if ( this.playback != null) this.StopPlayback();
+
             new Thread(delegate(object o)
             {
                 var response = WebRequest.Create(url).GetResponse();
@@ -72,8 +68,12 @@ namespace SoundCloud.Client
 
         public void StopPlayback()
         {
-            Properties.Settings.Default.Playback.Stop();
+            this.playback.Stop();
         }
 
+        public void PausePlayback()
+        {
+            this.playback.Pause();
+        }
     }
 }
